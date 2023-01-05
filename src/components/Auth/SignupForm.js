@@ -1,13 +1,16 @@
 import { useState, useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import AuthContext from '../../store/auth-context';
 import classes from './AuthForm.module.css';
 
-const AuthForm = () => {
+const SignupForm = (props) => {
   const history = useHistory();
+  const usernameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  const passwordConfirmInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
 
@@ -21,26 +24,23 @@ const AuthForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const enteredUsername = usernameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
+    const enteredConfirmedPassword = passwordConfirmInputRef.current.value;
 
     // optional: Add validation
 
     setIsLoading(true);
-    let url;
-    if (isLogin) {
-      url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24';
-    } else {
-      url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24';
-    }
-    fetch(url, {
+  
+    fetch('http://localhost:3000/api/v1/users/signup', {
       method: 'POST',
       body: JSON.stringify({
+        name: enteredUsername,
         email: enteredEmail,
         password: enteredPassword,
-        returnSecureToken: true,
+        passwordConfirm: enteredConfirmedPassword
+        // returnSecureToken: true,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -49,24 +49,28 @@ const AuthForm = () => {
       .then((res) => {
         setIsLoading(false);
         if (res.ok) {
+          console.log(res)
           return res.json();
         } else {
           return res.json().then((data) => {
             let errorMessage = 'Authentication failed!';
-            // if (data && data.error && data.error.message) {
-            //   errorMessage = data.error.message;
-            // }
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
 
             throw new Error(errorMessage);
           });
         }
       })
       .then((data) => {
-        const expirationTime = new Date(
-          new Date().getTime() + +data.expiresIn * 1000
-        );
-        authCtx.login(data.idToken, expirationTime.toISOString());
-        history.replace('/');
+      //   const expirationTime = new Date(
+      //     new Date().getTime() + +data.expiresIn * 1000
+      //   );
+        console.log("From Sign-Up");
+        console.log(data.token);
+        // authCtx.login(data.token);
+        props.onFormSwitch('login')
+        // history.replace('/login');
       })
       .catch((err) => {
         alert(err.message);
@@ -75,8 +79,12 @@ const AuthForm = () => {
 
   return (
     <section className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={submitHandler}>
+        <div className={classes.control}>
+          <label htmlFor='username'>Your Username</label>
+          <input type='text' id='username' required ref={usernameInputRef} />
+        </div>
         <div className={classes.control}>
           <label htmlFor='email'>Your Email</label>
           <input type='email' id='email' required ref={emailInputRef} />
@@ -90,22 +98,24 @@ const AuthForm = () => {
             ref={passwordInputRef}
           />
         </div>
+        <div className={classes.control}>
+          <label htmlFor='passwordConfirm'>Confirm Password</label>
+          <input type='password' id='passwordConfirm' required ref={passwordConfirmInputRef} />
+        </div>
         <div className={classes.actions}>
           {!isLoading && (
-            <button>{isLogin ? 'Login' : 'Create Account'}</button>
+            <button>Create Account</button>
           )}
           {isLoading && <p>Sending request...</p>}
           <button
             type='button'
             className={classes.toggle}
-            onClick={switchAuthModeHandler}
-          >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
-          </button>
+            onClick={() => props.onFormSwitch('login')}
+          >Login with existing account</button>
         </div>
       </form>
     </section>
   );
 };
 
-export default AuthForm;
+export default SignupForm;
