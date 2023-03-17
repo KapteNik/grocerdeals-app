@@ -59,15 +59,8 @@ const LoginForm = (props) => {
         //   new Date().getTime() + +data.expiresIn * 1000
         // );
         authCtx.login(data.token);
-        // console.log(data);
-        console.log(data.data.user.role);
-        if(data.data.user.role == "admin"){
-          console.log(1);
-          history.replace('/admin');
-        }else{
-          console.log(0);
-          history.replace('/home');
-        }
+        console.log(data.token)
+        history.replace('/home');
       })
       .catch((err) => {
         alert(err.message);
