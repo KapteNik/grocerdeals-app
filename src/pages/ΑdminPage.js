@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import StartingPageContent from '../components/StartingPage/StartingPageContent';
-import MapPageContent from '../components/MapPage/MapPageContent';
+import ReactMapPageContent from '../components/ReactMapPage/ReactMapPageContent';
 import AuthContext from '../store/auth-context';
+import React from 'react';
 
 const AdminPage = () => {
     const authCtx = useContext(AuthContext);

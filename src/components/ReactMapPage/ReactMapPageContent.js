@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import storesData from './food-stores.json'
-import './MapPageContent.css'
+import './ReactMapPageContent.css'
 
 function HorizontalCard(props) {
   return (
@@ -26,7 +26,7 @@ function HorizontalCard(props) {
   );
 }
 
-export default function MapPageContent() {
+export default function ReactMapPageContent() {
   return (
     <MapContainer center={[38.24854724404937, 21.739317840108985]} zoom={16} scrollWheelZoom={false}>
   <TileLayer
