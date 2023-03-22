@@ -112,7 +112,7 @@ const Item = styled(Paper)(({ theme }) => ({
     rowsPerPage: PropTypes.number.isRequired,
   };
 
-  export default function PurchaseHistoryTable(props) {
+  export default function LikeHistoryTable(props) {
     const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -138,7 +138,7 @@ const Item = styled(Paper)(({ theme }) => ({
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
       <TableHead>
           <TableRow>
-            <TableCell>Iστορικό Υποβολής Προσφορών</TableCell>
+            <TableCell>Iστορικό Υποβολής Like</TableCell>
             <TableCell align="right">Calories</TableCell>
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
           </TableRow>

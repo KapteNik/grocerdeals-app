@@ -1,0 +1,233 @@
+{
+    "fetch_date": 1669214001,
+    "products": [
+      {
+        "id": "0",
+        "name": "Μαλαματίνα Ρετσίνα 500ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Κρασιά"
+      },
+      {
+        "id": "1",
+        "name": "Κουρτάκη Ρετσίνα 500ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Κρασιά"
+      },
+      {
+        "id": "2",
+        "name": "Don Simon Kρασί Sangria Χαρτ 1λιτ",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Κρασιά"
+      },
+      {
+        "id": "3",
+        "name": "Κρασί Της Παρέας Λευκό 1λιτ",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Κρασιά"
+      },
+      {
+        "id": "4",
+        "name": "Κρασί Της Παρέας Ροζέ Κοκκινέλι 1λιτ",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Κρασιά"
+      },
+      {
+        "id": "5",
+        "name": "Βεργίνα Μπύρα 500ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Μπύρες"
+      },
+      {
+        "id": "7",
+        "name": "Amstel Μπύρα 330ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Μπύρες"
+      },
+      {
+        "id": "8",
+        "name": "Fix Hellas Mπύρα 330ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Μπύρες"
+      },
+      {
+        "id": "9",
+        "name": "Stella Artois Μπύρα 330ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Μπύρες"
+      },
+      {
+        "id": "10",
+        "name": "Mythos Μπύρα 330ml",
+        "category": "Ποτά - Αναψυκτικά",
+        "subcategory": "Μπύρες"
+      },
+      {
+        "id": "11",
+        "name": "Vanish Pink Πολυκαθαριστικό Λεκέδων 30γρ",
+        "category": "Καθαριότητα",
+        "subcategory": "Είδη γενικού καθαρισμού"
+      },
+      {
+        "id": "12",
+        "name": "Εύρηκα Λευκαντικό 60γρ",
+        "category": "Καθαριότητα",
+        "subcategory": "Είδη γενικού καθαρισμού"
+      },
+      {
+        "id": "13",
+        "name": "Ajax Τζαμιών 450ml",
+        "category": "Καθαριότητα",
+        "subcategory": "Είδη γενικού καθαρισμού"
+      },
+      {
+        "id": "14",
+        "name": "Scotch Brite Σφουγγαράκι Πράσ Κλασ 1τεμ",
+        "category": "Καθαριότητα",
+        "subcategory": "Είδη γενικού καθαρισμού"
+      },
+      {
+        "id": "15",
+        "name": "Ava Υγρό Πιάτων Ξύδι/Μήλο/Μέντα 430ml",
+        "category": "Καθαριότητα",
+        "subcategory": "Είδη γενικού καθαρισμού"
+      },
+      {
+        "id": "16",
+        "name": "Palmolive Υγρό Πιάτων Λεμόνι 500ml",
+        "category": "Καθαριότητα",
+        "subcategory": "Απορρυπαντικά"
+      },
+      {
+        "id": "17",
+        "name": "Omo Σκόνη 425γρ",
+        "category": "Καθαριότητα",
+        "subcategory": "Απορρυπαντικά"
+      },
+      {
+        "id": "18",
+        "name": "Soupline Μαλακτικό Ρούχων Λεβάντα 28μεζ",
+        "category": "Καθαριότητα",
+        "subcategory": "Απορρυπαντικά"
+      },
+      {
+        "id": "20",
+        "name": "Εύρηκα Σκόνη Antikalk 54γρμ",
+        "category": "Καθαριότητα",
+        "subcategory": "Απορρυπαντικά"
+      },
+      {
+        "id": "21",
+        "name": "Quaker Νιφ Βρώμης Ολ Άλεσης 500γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Δημητριακά"
+      },
+      {
+        "id": "22",
+        "name": "Nestle Fitness 375γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Δημητριακά"
+      },
+      {
+        "id": "23",
+        "name": "Nestle Fitness Dark Chocolate 375γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Δημητριακά"
+      },
+      {
+        "id": "24",
+        "name": "Nestle Nesquik 375γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Δημητριακά"
+      },
+      {
+        "id": "25",
+        "name": "Nesquik Δημητριακά Extra Choco Waves 375γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Δημητριακά"
+      },
+      {
+        "id": "26",
+        "name": "Μινέρβα Αραβοσιτέλαιο 1λιτ",
+        "category": "Τρόφιμα",
+        "subcategory": "Λάδι"
+      },
+      {
+        "id": "27",
+        "name": "Μινέρβα Ελαιόλαδο 1λιτ",
+        "category": "Τρόφιμα",
+        "subcategory": "Λάδι"
+      },
+      {
+        "id": "28",
+        "name": "Sol Ηλιέλαιο 1λιτ",
+        "category": "Τρόφιμα",
+        "subcategory": "Λάδι"
+      },
+      {
+        "id": "29",
+        "name": "Μέλισσα Τορτελίνια Γεμ Τυρίων 250γρ",
+        "category": "Τρόφιμα",
+        "subcategory": "Λάδι"
+      },
+      {
+        "id": "30",
+        "name": "Άλτις Παραδοσιακό Ελαιόλαδο Παρθένο 1λιτ",
+        "category": "Τρόφιμα",
+        "subcategory": "Λάδι"
+      },
+      {
+        "id": "31",
+        "name": "Orzene Condit Μπύρας Κανον Μαλλ 250ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Σαμπουάν - Αφρόλουτρα"
+      },
+      {
+        "id": "32",
+        "name": "Axe Αφροντούς Africa 400ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Σαμπουάν - Αφρόλουτρα"
+      },
+      {
+        "id": "33",
+        "name": "Orzene Σαμπουάν Μπύρας Κανον 400ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Σαμπουάν - Αφρόλουτρα"
+      },
+      {
+        "id": "34",
+        "name": "Dove Ντούς Deeply Nourisηing 750ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Σαμπουάν - Αφρόλουτρα"
+      },
+      {
+        "id": "35",
+        "name": "Noxzema Αφρόλ Talc 750ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Σαμπουάν - Αφρόλουτρα"
+      },
+      {
+        "id": "36",
+        "name": "Dove Αποσμ Σπρέυ 150ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Αποσμητικά"
+      },
+      {
+        "id": "37",
+        "name": "Noxzema Αποσμ Rollon Classic 50ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Αποσμητικά"
+      },
+      {
+        "id": "38",
+        "name": "Dove Deodorant Κρέμα Rollon 50ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Αποσμητικά"
+      },
+      {
+        "id": "39",
+        "name": "Axe Αποσμ Σπρέυ Dark Temptation 150ml",
+        "category": "Προσωπική φροντίδα",
+        "subcategory": "Αποσμητικά"
+      }
+    ]
+}

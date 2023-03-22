@@ -4,7 +4,7 @@ import React from 'react';
 import AuthContext from '../../store/auth-context';
 import classes from './ProfileForm.module.css';
 
-const ProfileForm = () => {
+const ChangePasswordForm = () => {
   const history = useHistory();
 
   const newPasswordInputRef = useRef();
@@ -47,4 +47,4 @@ const ProfileForm = () => {
   );
 };
 
-export default ProfileForm;
+export default ChangePasswordForm;

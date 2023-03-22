@@ -1,0 +1,322 @@
+{
+    "version": 0.6,
+    "generator": "Overpass API 0.7.59.4 36d058c8",
+    "osm3s": {
+      "timestamp_osm_base": "2023-03-21T15:56:39Z",
+      "timestamp_areas_base": "2023-03-21T11:32:21Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+  
+  {
+    "type": "node",
+    "id": 1305757019,
+    "lat": 38.0406562,
+    "lon": 23.8066653,
+    "tags": {
+      "addr:city": "Μαρούσι",
+      "addr_street": "Χειμάρρας",
+      "brand": "Σκλαβενίτης",
+      "brand:el": "Σκλαβενίτης",
+      "brand:en": "Sklavenitis",
+      "brand:wikidata": "Q7536037",
+      "brand:wikipedia": "el:Σκλαβενίτης",
+      "currency:EUR": "yes",
+      "name": "Σκλαβενίτης",
+      "name:el": "Σκλαβενίτης",
+      "name:en": "Sklavenitis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [{
+      "id": "0",
+      "name": "Μαλαματίνα Ρετσίνα 500ml",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Κρασιά"
+    },
+    {
+      "id": "1",
+      "name": "Κουρτάκη Ρετσίνα 500ml",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Κρασιά"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 1668102828,
+    "lat": 38.0491924,
+    "lon": 23.7998591,
+    "tags": {
+      "brand": "LIDL",
+      "addr:city": "Μαρούσι",
+      "addr_street": "Αγίου Κωνσταντίνου",
+      "currency:EUR": "yes",
+      "name": "Bazaar",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [{
+      "id": "1",
+      "name": "Κουρτάκη Ρετσίνα 500ml",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Κρασιά"
+    },{
+      "id": "2",
+      "name": "Don Simon Kρασί Sangria Χαρτ 1λιτ",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Κρασιά"
+    }, {
+      "id": "9",
+      "name": "Stella Artois Μπύρα 330ml",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Μπύρες"
+    },
+    {
+      "id": "10",
+      "name": "Mythos Μπύρα 330ml",
+      "category": "Ποτά - Αναψυκτικά",
+      "subcategory": "Μπύρες"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 2027828083,
+    "lat": 38.0361288,
+    "lon": 23.7956844,
+    "tags": {
+      "brand": "Σκλαβενίτης",
+      "brand:el": "Σκλαβενίτης",
+      "brand:en": "Sklavenitis",
+      "brand:wikidata": "Q7536037",
+      "brand:wikipedia": "el:Σκλαβενίτης",
+      "addr_street": "25ης Μαρτίου",
+      "currency:EUR": "yes",
+      "name": "Σκλαβενίτης",
+      "name:el": "Σκλαβενίτης",
+      "name:en": "Sklavenitis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [{
+      "id": "22",
+      "name": "Nestle Fitness 375γρ",
+      "category": "Τρόφιμα",
+      "subcategory": "Δημητριακά"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 2124938895,
+    "lat": 38.0247447,
+    "lon": 23.7887194,
+    "tags": {
+      "branch": "ΦΙΛΟΘΕΗ",
+      "brand": "ΑΒ Βασιλόπουλος",
+      "brand:el": "ΑΒ Βασιλόπουλος",
+      "brand:en": "AB Vassilopoulos",
+      "brand:wikidata": "Q4721807",
+      "brand:wikipedia": "el:Άλφα Βήτα Βασιλόπουλος",
+      "addr_street": "Ζαλόγγου",
+      "currency:EUR": "yes",
+      "name": "ΑΒ Βασιλόπουλος",
+      "name:el": "ΑΒ Βασιλόπουλος",
+      "name:en": "AB Vassilopoulos",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "phone": "+302106820741 +302106820743 +302106801752",
+      "shop": "supermarket",
+      "website": "https://www.ab.gr/storedetails/filothei"
+   },
+    "products": [{
+      "id": "24",
+      "name": "Nestle Nesquik 375γρ",
+      "category": "Τρόφιμα",
+      "subcategory": "Δημητριακά"
+   }]
+},
+  {
+    "type": "node",
+    "id": 4082913304,
+    "lat": 38.0319672,
+    "lon": 23.8102510,
+    "tags": {
+      "addr:city": "Μαρούσι",
+      "addr:housenumber": "31",
+      "addr:postcode": "15125",
+      "addr_street": "Ακακιών",
+      "brand": "Μασούτης",
+      "brand:el": "Μασούτης",
+      "brand:en": "Masoutis",
+      "brand:wikidata": "Q6783887",
+      "brand:wikipedia": "en:Masoutis",
+      "currency:EUR": "yes",
+      "name": "Μασούτης",
+      "name:el": "Μασούτης",
+      "name:en": "Masoutis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [ {
+      "id": "32",
+      "name": "Axe Αφροντούς Africa 400ml",
+      "category": "Προσωπική φροντίδα",
+      "subcategory": "Σαμπουάν - Αφρόλουτρα"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 4437436858,
+    "lat": 38.0551118,
+    "lon": 23.8037691,
+    "tags": {
+      "addr:city": "Μαρούσι",
+      "addr:housenumber": "1",
+      "addr_street": "Θησέως",
+      "brand": "Σκλαβενίτης",
+      "brand:el": "Σκλαβενίτης",
+      "brand:en": "Sklavenitis",
+      "brand:wikidata": "Q7536037",
+      "brand:wikipedia": "el:Σκλαβενίτης",
+      "currency:EUR": "yes",
+      "name": "Σκλαβενίτης",
+      "name:el": "Σκλαβενίτης",
+      "name:en": "Sklavenitis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [{
+      "id": "18",
+      "name": "Soupline Μαλακτικό Ρούχων Λεβάντα 28μεζ",
+      "category": "Καθαριότητα",
+      "subcategory": "Απορρυπαντικά"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 4555304921,
+    "lat": 38.0541477,
+    "lon": 23.8109175,
+    "tags": {
+      "brand": "LIDL",
+      "addr:city": "Μαρούσι",
+      "addr_street": "Μητροπόλεως",
+      "currency:EUR": "yes",
+      "name": "My market",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+      "products": [{
+      "id": "17",
+      "name": "Omo Σκόνη 425γρ",
+      "category": "Καθαριότητα",
+      "subcategory": "Απορρυπαντικά"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 5154173815,
+    "lat": 38.0529204,
+    "lon": 23.8087909,
+    "tags": {
+      "brand": "AB Bασιλόπουλος",
+      "addr:city": "Μαρούσι",
+      "addr:country": "GR",
+      "addr:postcode": "15124",
+      "addr_street": "Βασιλίσσης Σοφίας",
+      "currency:EUR": "yes",
+      "name": "OK! Anytime Markets",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },"products": [{
+      "id": "38",
+      "name": "Dove Deodorant Κρέμα Rollon 50ml",
+      "category": "Προσωπική φροντίδα",
+      "subcategory": "Αποσμητικά"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 6868318656,
+    "lat": 38.0563374,
+    "lon": 23.8036024,
+    "tags": {
+      "addr:city": "Μαρούσι",
+      "addr:country": "GR",
+      "addr:postcode": "15122",
+      "addr_street": "Αριστείδου",
+      "brand": "Μασούτης",
+      "brand:el": "Μασούτης",
+      "brand:en": "Masoutis",
+      "brand:wikidata": "Q6783887",
+      "brand:wikipedia": "en:Masoutis",
+      "currency:EUR": "yes",
+      "name": "Μασούτης",
+      "name:el": "Μασούτης",
+      "name:en": "Masoutis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [{
+      "id": "34",
+      "name": "Dove Ντούς Deeply Nourisηing 750ml",
+      "category": "Προσωπική φροντίδα",
+      "subcategory": "Σαμπουάν - Αφρόλουτρα"
+    }]
+  },
+  {
+    "type": "node",
+    "id": 6868319616,
+    "lat": 38.04743049891218,
+    "lon": 23.818296819912636,
+    "tags": {
+      "addr:city": "Μαρούσι",
+      "addr:country": "GR",
+      "addr:postcode": "15126",
+      "addr_street": "Χρυσοχέρη",
+      "brand": "Μασούτης",
+      "brand:el": "Μασούτης",
+      "brand:en": "Masoutis",
+      "brand:wikidata": "Q6783887",
+      "brand:wikipedia": "en:Masoutis",
+      "currency:EUR": "yes",
+      "name": "Μασούτης",
+      "name:el": "Μασούτης",
+      "name:en": "Masoutis",
+      "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su closed",
+      "opening_hours:covid19": "Mo-Fr 08:00-20:30; Sa 08:00-20:00; Su closed",
+      "shop": "supermarket"
+    },
+    "products": [ {
+      "id": "11",
+      "name": "Vanish Pink Πολυκαθαριστικό Λεκέδων 30γρ",
+      "category": "Καθαριότητα",
+      "subcategory": "Είδη γενικού καθαρισμού"
+    },
+    {
+      "id": "12",
+      "name": "Εύρηκα Λευκαντικό 60γρ",
+      "category": "Καθαριότητα",
+      "subcategory": "Είδη γενικού καθαρισμού"
+    },{
+      "id": "15",
+      "name": "Ava Υγρό Πιάτων Ξύδι/Μήλο/Μέντα 430ml",
+      "category": "Καθαριότητα",
+      "subcategory": "Είδη γενικού καθαρισμού"
+    },{
+      "id": "20",
+      "name": "Εύρηκα Σκόνη Antikalk 54γρμ",
+      "category": "Καθαριότητα",
+      "subcategory": "Απορρυπαντικά"
+    }]
+  }
+    ]
+  }
+  
