@@ -59,15 +59,13 @@ const LoginForm = (props) => {
         //   new Date().getTime() + +data.expiresIn * 1000
         // );
         authCtx.login(data.token);
-        // console.log(data);
-        console.log(data.data.user.role);
-        if(data.data.user.role == "admin"){
-          console.log(1);
-          history.replace('/admin');
-        }else{
-          console.log(0);
+        authCtx.admin(data.data.user.role)
+        console.log("role" + data.data.user.role);
+        // if(data.data.user.role = "roleadmin"){
+        //   authCtx.isAdmin = true;
+        //   console.log(authCtx.isAdmin);
+        // }
           history.replace('/home');
-        }
       })
       .catch((err) => {
         alert(err.message);

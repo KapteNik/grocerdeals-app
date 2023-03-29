@@ -8,6 +8,7 @@ const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
 
   const isLoggedIn = authCtx.isLoggedIn;
+  const isAdmin = authCtx.isAdmin;
 
   const logoutHandler = () => {
     authCtx.logout();
@@ -16,6 +17,7 @@ const MainNavigation = () => {
 
   return (
     <header className={classes.header}>
+      {console.log(isAdmin)}
       <Link to='/'>
         <div className={classes.logo}>React Auth</div>
       </Link>
@@ -24,6 +26,11 @@ const MainNavigation = () => {
           {!isLoggedIn && (
             <li>
               <Link to='/auth'>Login</Link>
+            </li>
+          )}
+          {isAdmin && (
+            <li>
+              <Link to='/Admin'>Admin</Link>
             </li>
           )}
           {isLoggedIn && (
