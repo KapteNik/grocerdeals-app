@@ -66,8 +66,6 @@ const SignupForm = (props) => {
       //   const expirationTime = new Date(
       //     new Date().getTime() + +data.expiresIn * 1000
       //   );
-        console.log("From Sign-Up");
-        console.log(data.token);
         // authCtx.login(data.token);
         props.onFormSwitch('login')
         // history.replace('/login');

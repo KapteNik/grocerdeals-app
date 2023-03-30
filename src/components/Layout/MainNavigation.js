@@ -9,6 +9,8 @@ const MainNavigation = () => {
 
   const isLoggedIn = authCtx.isLoggedIn;
   const isAdmin = authCtx.isAdmin;
+  const usersName = authCtx.username;
+  console.log(usersName)
 
   const logoutHandler = () => {
     authCtx.logout();
@@ -17,7 +19,6 @@ const MainNavigation = () => {
 
   return (
     <header className={classes.header}>
-      {console.log(isAdmin)}
       <Link to='/'>
         <div className={classes.logo}>React Auth</div>
       </Link>
@@ -35,7 +36,7 @@ const MainNavigation = () => {
           )}
           {isLoggedIn && (
             <li>
-              <Link to='/profile'>Profile</Link>
+              <Link to='/profile'>{usersName}'s Profile</Link>
             </li>
           )}
           {isLoggedIn && (
