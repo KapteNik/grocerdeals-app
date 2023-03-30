@@ -7,21 +7,22 @@ import classes from './ProfileForm.module.css';
 const ChangeUsernameForm = () => {
   const history = useHistory();
 
-  const newPasswordInputRef = useRef();
+  const newUsernameInputRef = useRef();
   const authCtx = useContext(AuthContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
+    // event.target.reset();
 
-    const enteredNewPassword = newPasswordInputRef.current.value;
+    const enteredNewUsername = newUsernameInputRef.current.value;
 
     // add validation
 
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24', {
-      method: 'POST',
+    fetch('http://localhost:3000/api/v1/users/updateMe', {
+      method: 'PATCH',
       body: JSON.stringify({
         idToken: authCtx.token,
-        password: enteredNewPassword,
+        name: enteredNewUsername,
         returnSecureToken: false
       }),
       headers: {
@@ -29,16 +30,21 @@ const ChangeUsernameForm = () => {
       }
     }).then(res => {
       // assumption: Always succeeds!
-
-      history.replace('/');
+      if(res.ok){
+        alert("Username Changed Successfully!")
+        event.target.reset();
+      }else{
+        console.log(res);
+      }
+      // history.replace('/');
     });
   };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <div className={classes.control}>
-        <label htmlFor='new-password'>New Username</label>
-        <input type='password' id='new-password' minLength="7" ref={newPasswordInputRef} />
+        <label htmlFor='new-username'>New Username</label>
+        <input type='username' id='new-username' minLength="7" ref={newUsernameInputRef} />
       </div>
       <div className={classes.action}>
         <button>Change Username</button>
