@@ -27,7 +27,8 @@ function App() {
           {!authCtx.isLoggedIn && <Redirect to='/auth' />}
         </Route>
         <Route path='/admin'>
-          <AdminPage/>
+        {authCtx.isLoggedIn &&  <AdminPage/>}
+        {!authCtx.isLoggedIn && <Redirect to='/auth' />}
         </Route>
         <Route path='*'>
           <Redirect to='/' />

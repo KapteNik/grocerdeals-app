@@ -61,7 +61,6 @@ const LoginForm = (props) => {
         authCtx.login(data.token);
         authCtx.admin(data.data.user.role)
         authCtx.getUsername(data.data.user.name)
-        console.log(data.data.user.name);
         history.replace('/home');
       })
       .catch((err) => {

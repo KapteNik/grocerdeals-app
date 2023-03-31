@@ -36,17 +36,39 @@ const retrieveStoredToken = () => {
   };
 };
 
+const retrieveStoredUsername = () => {
+  return localStorage.getItem('username');
+};
+
+const retrieveStoredRole = () => {
+  return localStorage.getItem('role');
+};
+
 export const AuthContextProvider = (props) => {
   const tokenData = retrieveStoredToken();
+  const storedUsername = retrieveStoredUsername();
+  const storedRole = retrieveStoredRole();
   
   let initialToken;
   if (tokenData) {
     initialToken = tokenData.token;
   }
 
+  let initialUsername
+  if(storedUsername) {
+    initialUsername = storedUsername;
+  }
+
+  let initialRole
+  if(storedRole) {
+    initialRole = storedRole;
+  }
+
+
+
   const [token, setToken] = useState(initialToken);
-  const [admin, setAdmin] = useState(false);
-  const [username, setUsername] = useState(false);
+  const [admin, setAdmin] = useState(initialRole);
+  const [username, setUsername] = useState(initialUsername);
 
   const userIsLoggedIn = !!token;
   const userIsAdmin = admin;
@@ -54,9 +76,11 @@ export const AuthContextProvider = (props) => {
 
   const logoutHandler = useCallback(() => {
     setToken(null);
-    setAdmin(false);
-    setUsername('');
+    setAdmin(null);
+    setUsername(null);
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');    
 
     // localStorage.removeItem('expirationTime');
     // if (logoutTimer) {
@@ -73,13 +97,15 @@ export const AuthContextProvider = (props) => {
   };
 
   const adminHandler = (role) => {
-    if(role === "admin"){
-      setAdmin(true);
+    if(role){
+      setAdmin(role);
     }
+    localStorage.setItem('role', role);
   };
 
   const usernameHandler = (name) => {
     setUsername(name);
+    localStorage.setItem('username', name);
     };
 
 

@@ -32,6 +32,7 @@ const ChangeUsernameForm = () => {
       // assumption: Always succeeds!
       if(res.ok){
         alert("Username Changed Successfully!")
+        authCtx.getUsername(enteredNewUsername)
         event.target.reset();
       }else{
         console.log(res);
