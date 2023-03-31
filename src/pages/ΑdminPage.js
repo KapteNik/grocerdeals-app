@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AuthContext from '../store/auth-context';
-import OfferForm from '../components/Admin/OfferForm';
+import ProductsForm from '../components/Admin/ProductsForm';
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -15,7 +15,7 @@ const AdminPage = () => {
         justifyContent="center"
         alignItems="center">
       <Grid item xs={12}>
-        <OfferForm />
+        <ProductsForm />
       </Grid>
       <Grid item xs={12}>
         {/* <ChangePasswordForm /> */}
