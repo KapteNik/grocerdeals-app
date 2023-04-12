@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import React from 'react';
-import AuthContext from '../../store/auth-context';
-import classes from './MainNavigation.module.css';
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import React from "react";
+import AuthContext from "../../store/auth-context";
+import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
@@ -10,7 +10,6 @@ const MainNavigation = () => {
   const isLoggedIn = authCtx.isLoggedIn;
   const isAdmin = authCtx.isAdmin;
   const usersName = authCtx.username;
-  console.log(usersName)
 
   const logoutHandler = () => {
     authCtx.logout();
@@ -19,24 +18,24 @@ const MainNavigation = () => {
 
   return (
     <header className={classes.header}>
-      <Link to='/'>
+      <Link to="/">
         <div className={classes.logo}>React Auth</div>
       </Link>
       <nav>
         <ul>
           {!isLoggedIn && (
             <li>
-              <Link to='/auth'>Login</Link>
+              <Link to="/auth">Login</Link>
             </li>
           )}
           {isAdmin && (
             <li>
-              <Link to='/Admin'>Admin</Link>
+              <Link to="/Admin">Admin</Link>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to='/profile'>{usersName}'s Profile</Link>
+              <Link to="/profile">{usersName}'s Profile</Link>
             </li>
           )}
           {isLoggedIn && (
