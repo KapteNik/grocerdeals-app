@@ -1,0 +1,43 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: rgb(184, 195, 195);
+  width: 50%;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  /* auto will create a single column in your grid,
+   where each grid item will take up the width of its content. */
+}
+
+.upperLine {
+  background-color: rgb(160, 152, 132);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lowerLine {
+  background-color: rgb(160, 196, 191);
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.icons {
+  background-color: blueviolet;
+  display: flex;
+}
+
+.icon {
+  padding: 0px 20px;
+  margin: 0px 10px;
+  /* top and bottom padding is 0, left and right padding is 20px */
+}

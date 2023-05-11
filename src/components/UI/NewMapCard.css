@@ -1,0 +1,42 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.mapCard {
+  background-color: rgb(184, 195, 195);
+  width: 90%;
+  height: 100%;
+  margin: 15px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  /* auto will create a single column in your grid,
+     where each grid item will take up the width of its content. */
+}
+
+.mapUpperLine {
+  background-color: rgb(160, 152, 132);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapLowerLine {
+  background-color: rgb(187, 160, 196);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapIcons {
+  background-color: blueviolet;
+  display: flex;
+}
+
+.icon {
+  padding: 0px 20px;
+  /* top and bottom padding is 0, left and right padding is 20px */
+}
