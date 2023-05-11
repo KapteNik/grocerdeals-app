@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from "react";
 
 let logoutTimer;
 
 const AuthContext = React.createContext({
-  token: '',
+  token: "",
   isLoggedIn: false,
   isAdmin: false,
-  username: '',
+  username: "",
   getUsername: (name) => {},
   admin: (role) => {},
   login: (token) => {},
@@ -21,7 +21,7 @@ const AuthContext = React.createContext({
 // };
 
 const retrieveStoredToken = () => {
-  const storedToken = localStorage.getItem('token');
+  const storedToken = localStorage.getItem("token");
   // const storedExpirationDate = localStorage.getItem('expirationTime');
   // const remainingTime = calculateRemainingTime(storedExpirationDate);
   // if (remainingTime <= 3600) {
@@ -37,34 +37,32 @@ const retrieveStoredToken = () => {
 };
 
 const retrieveStoredUsername = () => {
-  return localStorage.getItem('username');
+  return localStorage.getItem("username");
 };
 
 const retrieveStoredRole = () => {
-  return localStorage.getItem('role');
+  return localStorage.getItem("role");
 };
 
 export const AuthContextProvider = (props) => {
   const tokenData = retrieveStoredToken();
   const storedUsername = retrieveStoredUsername();
   const storedRole = retrieveStoredRole();
-  
+
   let initialToken;
   if (tokenData) {
     initialToken = tokenData.token;
   }
 
-  let initialUsername
-  if(storedUsername) {
+  let initialUsername;
+  if (storedUsername) {
     initialUsername = storedUsername;
   }
 
-  let initialRole
-  if(storedRole) {
+  let initialRole;
+  if (storedRole) {
     initialRole = storedRole;
   }
-
-
 
   const [token, setToken] = useState(initialToken);
   const [admin, setAdmin] = useState(initialRole);
@@ -78,9 +76,9 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     setAdmin(null);
     setUsername(null);
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    localStorage.removeItem('role');    
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("role");
 
     // localStorage.removeItem('expirationTime');
     // if (logoutTimer) {
@@ -90,24 +88,23 @@ export const AuthContextProvider = (props) => {
 
   const loginHandler = (token, expirationTime) => {
     setToken(token);
-    localStorage.setItem('token', token);
+    localStorage.setItem("token", token);
     // localStorage.setItem('expirationTime', expirationTime);
     // const remainingTime = calculateRemainingTime(expirationTime);
     // logoutTimer = setTimeout(logoutHandler, remainingTime);
   };
 
   const adminHandler = (role) => {
-    if(role){
+    if (role) {
       setAdmin(role);
     }
-    localStorage.setItem('role', role);
+    localStorage.setItem("role", role);
   };
 
   const usernameHandler = (name) => {
     setUsername(name);
-    localStorage.setItem('username', name);
-    };
-
+    localStorage.setItem("username", name);
+  };
 
   // useEffect(() => {
   //   if (tokenData) {

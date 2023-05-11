@@ -1,8 +1,8 @@
-import { useRef, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import React from 'react';
-import AuthContext from '../../store/auth-context';
-import classes from './ProfileForm.module.css';
+import { useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import React from "react";
+import AuthContext from "../../store/auth-context";
+import classes from "./ProfileForm.module.css";
 
 const ChangePasswordForm = () => {
   const history = useHistory();
@@ -21,25 +21,25 @@ const ChangePasswordForm = () => {
 
     // add validation
 
-    fetch('http://localhost:3000/api/v1/users/updateMyPassword', {
-      method: 'PATCH',
+    fetch("http://localhost:3000/api/v1/users/updateMyPassword", {
+      method: "PATCH",
       body: JSON.stringify({
         idToken: authCtx.token,
         oldPassword: enteredOldPassword,
         newPassword: enteredNewPassword,
-        confirmNewPassword: enteredConfirmedNewPassword ,
-        returnSecureToken: false
+        confirmNewPassword: enteredConfirmedNewPassword,
+        returnSecureToken: false,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(res => {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
       // assumption: Always succeeds!
-      if(res.ok){
-        alert("Password Changed Successfully!")
+      if (res.ok) {
+        alert("Password Changed Successfully!");
         event.target.reset();
-      }else{
-        console.log(res);
+      } else {
+        // console.log(res);
       }
       // history.replace('/');
     });
@@ -48,16 +48,31 @@ const ChangePasswordForm = () => {
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <div className={classes.control}>
-        <label htmlFor='new-password'>Οld Password</label>
-        <input type='password' id='old-password' minLength="8" ref={oldPasswordInputRef} />
+        <label htmlFor="new-password">Οld Password</label>
+        <input
+          type="password"
+          id="old-password"
+          minLength="8"
+          ref={oldPasswordInputRef}
+        />
       </div>
       <div className={classes.control}>
-        <label htmlFor='new-password'>New Password</label>
-        <input type='password' id='new-password' minLength="8" ref={newPasswordInputRef} />
+        <label htmlFor="new-password">New Password</label>
+        <input
+          type="password"
+          id="new-password"
+          minLength="8"
+          ref={newPasswordInputRef}
+        />
       </div>
       <div className={classes.control}>
-        <label htmlFor='new-password'>Confirm New Password</label>
-        <input type='password' id='confirm-new-password' minLength="8" ref={confirmNewPasswordInputRef} />
+        <label htmlFor="new-password">Confirm New Password</label>
+        <input
+          type="password"
+          id="confirm-new-password"
+          minLength="8"
+          ref={confirmNewPasswordInputRef}
+        />
       </div>
       <div className={classes.action}>
         <button>Change Password</button>

@@ -1,8 +1,8 @@
-import { useRef, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import React from 'react';
-import AuthContext from '../../store/auth-context';
-import classes from './ProfileForm.module.css';
+import { useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import React from "react";
+import AuthContext from "../../store/auth-context";
+import classes from "./ProfileForm.module.css";
 
 const ChangeUsernameForm = () => {
   const history = useHistory();
@@ -18,24 +18,24 @@ const ChangeUsernameForm = () => {
 
     // add validation
 
-    fetch('http://localhost:3000/api/v1/users/updateMe', {
-      method: 'PATCH',
+    fetch("http://localhost:3000/api/v1/users/updateMe", {
+      method: "PATCH",
       body: JSON.stringify({
         idToken: authCtx.token,
         name: enteredNewUsername,
-        returnSecureToken: false
+        returnSecureToken: false,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(res => {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
       // assumption: Always succeeds!
-      if(res.ok){
-        alert("Username Changed Successfully!")
-        authCtx.getUsername(enteredNewUsername)
+      if (res.ok) {
+        alert("Username Changed Successfully!");
+        authCtx.getUsername(enteredNewUsername);
         event.target.reset();
-      }else{
-        console.log(res);
+      } else {
+        // console.log(res);
       }
       // history.replace('/');
     });
@@ -44,8 +44,13 @@ const ChangeUsernameForm = () => {
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <div className={classes.control}>
-        <label htmlFor='new-username'>New Username</label>
-        <input type='username' id='new-username' minLength="7" ref={newUsernameInputRef} />
+        <label htmlFor="new-username">New Username</label>
+        <input
+          type="username"
+          id="new-username"
+          minLength="7"
+          ref={newUsernameInputRef}
+        />
       </div>
       <div className={classes.action}>
         <button>Change Username</button>
