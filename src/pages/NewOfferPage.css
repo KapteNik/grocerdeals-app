@@ -1,0 +1,97 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  display: flex;
+  flex: 1;
+  margin: 10px;
+}
+
+.search-bar-container {
+  background-color: rgb(98, 139, 169);
+  border-radius: 10px;
+  padding-top: 12.5vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+  min-width: 200px;
+}
+
+.search-bar {
+  background-color: aliceblue;
+  width: 80%;
+  border-radius: 10px;
+  height: 1.5rem;
+  padding: 0 15px;
+  /* box-shadow: 0px 0px 8px #ddd; */
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+#search-icon {
+  color: rgb(79, 7, 79);
+}
+
+.title {
+  padding: 10px;
+}
+
+.newOfferForm {
+  background-color: rgb(184, 195, 195);
+  width: 25%;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  /* auto will create a single column in your grid,
+     where each grid item will take up the width of its content. */
+}
+
+.dropdown {
+  margin: 5px;
+  padding: 8px;
+}
+
+.output-card {
+  background-color: rgba(150, 185, 174, 0.812);
+  border-radius: 10px;
+  width: 60%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px;
+}
+
+.name {
+  padding: 10px;
+}
+
+.input {
+  margin: 5px;
+  padding: 8px;
+}
+
+.button {
+  margin: 5px;
+  padding: 8px;
+}
