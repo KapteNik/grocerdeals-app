@@ -2,19 +2,16 @@ import { React, useState, useEffect } from "react";
 import {
   MapContainer,
   TileLayer,
-  useMap,
   Marker,
   Popup,
   useMapEvents,
 } from "react-leaflet";
-import storesData from "./groceries-stores.json";
 import "./ReactMapPageContent.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder";
 import NewMapCard from "../UI/NewMapCard";
 import LocationMarker from "./LocationMarker";
-import PopupButton from "./PopupButton";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import "./../UI/NewMapCard.css";
 import "./PopUp.css";
 import L from "leaflet";
@@ -27,7 +24,6 @@ function LocationButton() {
       map.locate();
     },
     locationfound(e) {
-      // console.log(e.latlng);
       setPosition(e.latlng);
       map.flyTo(e.latlng, map.getZoom());
     },
@@ -39,45 +35,52 @@ function LocationButton() {
   );
 }
 
+function isDistanceLessThan500m(location1, location2) {
+  const lat1 = location1[0];
+  const lon1 = location1[1];
+  const lat2 = location2[0];
+  const lon2 = location2[1];
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  var dLon = deg2rad(lon2 - lon1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+
+  return d < 0.5;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180);
+}
+
 export default function ReactMapPageContent() {
   const [storesJSON, setStoresJSON] = useState([]);
   const [offersJSON, setOffersJSON] = useState([]);
-  const [storesWithin, setStoresWithin] = useState([]);
   const history = useHistory();
-  const hardcodedStores = Object.values(storesData.elements);
-  // console.log("hardcodedStores" + hardcodedStores);
+
+  const position = [38.04826112872981, 23.818216389001485];
+
   const handleAddButtonClick = () => {
     history.push("/newoffer");
   };
 
-  const handleStoresWithinUpdate = (storesWithin) => {
-    // update the state with the new value of storesWithin
-    // console.log("storesWithin");
-    // console.log(storesWithin.data.data[0]._id);
-    setStoresWithin(storesWithin.data.data[0]._id);
-    // console.log("storesWithin in Map: " + JSON.stringify(storesWithin));
-    // console.log(JSON.stringify(storesWithin.data.data));
-  };
-
-  const isStoreWithin = (storesWithin, store) => {
-    const storesWithinId = [];
-    console.log("storesWithin");
-    console.log(storesWithin);
-
-    storesWithin.map((store) => {
-      storesWithinId.push(store._id);
-    });
-    console.log(storesWithinId);
-    // const isContained = storesWithinId.includes(store._id);
-    // console.log(isContained);
-    // return isContained;
-  };
-
-  const handleReviewButtonClick = () => {
-    history.push({
-      pathname: "/reviewStore",
-      state: { offers: offersJSON },
-    });
+  const getStoreOffers = (id) => {
+    fetch(`http://localhost:3000/api/v1/offers/getStoreOffers/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setOffersJSON(data.data.offers);
+        // console.log(data.data.offers);
+      })
+      // .then(() => {
+      //   isStoreWithin(storesJSON, store);
+      // })
+      .catch((error) => console.error(error));
   };
 
   // Define a custom red icon
@@ -107,13 +110,14 @@ export default function ReactMapPageContent() {
     fetch("http://localhost:3000/api/v1/stores/getAllStores")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.data.stores);
         setStoresJSON(Object.values(data.data.stores));
-        // const stores = Object.values(storesJSON.data.stores);
-        // console.log(JSON.stringify(data.data.stores));
-        // console.log("storesWithin in Map: " + JSON.stringify(storesWithin));
-        // console.log("storedJSON in Map: " + storesJSON);
       });
   }, []);
+
+  if (!offersJSON) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -126,14 +130,8 @@ export default function ReactMapPageContent() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <L.Control.Geocoder
-        position="topleft" // move the control to the top-left corner
-        placeholder="Search..." // customize the placeholder text
-        defaultMarkGeocode={false} // prevent the map from zooming to the search result
-      /> */}
         <LocationButton />
-        <LocationMarker onUpdate={handleStoresWithinUpdate} />
-
+        <LocationMarker />
         {storesJSON.map((store) => (
           <Marker
             key={store._id}
@@ -142,23 +140,12 @@ export default function ReactMapPageContent() {
               store.location.coordinates[1],
             ]}
             eventHandlers={{
-              click: (e) => {
-                fetch(
-                  `http://localhost:3000/api/v1/offers/getStoreOffers/${store._id}`
-                )
-                  .then((response) => response.json())
-                  .then((data) => {
-                    setOffersJSON(data.data.offers);
-                    // console.log(data.data.offers);
-                  })
-                  // .then(() => {
-                  //   isStoreWithin(storesJSON, store);
-                  // })
-                  .catch((error) => console.error(error));
+              click: () => {
+                getStoreOffers(store._id);
               },
             }}
-            icon={isStoreWithin(storesWithin, store) ? redIcon : blueIcon}
-            // icon={redIcon}
+            // icon={offersJSON.length == 0 ? redIcon : blueIcon}
+            icon={blueIcon}
           >
             <Popup className="pop-up">
               <div className="container-pop-up">
@@ -182,18 +169,25 @@ export default function ReactMapPageContent() {
                   ))}
                 </ul>
                 <div className="container-buttons">
-                  {offersJSON.length !== 0 && (
-                    <button
-                      className="button"
-                      onClick={handleReviewButtonClick}
+                  {isDistanceLessThan500m(
+                    position,
+                    store.location.coordinates
+                  ) && (
+                    <Link
+                      className="container-buttons"
+                      to={`/reviewstore/${store._id}`}
                     >
-                      Αξιολόγηση
-                    </button>
+                      <button>Aξιολόγηση</button>
+                    </Link>
                   )}
-                  <button className="button" onClick={handleAddButtonClick}>
-                    Προσθήκη
-                    {/* props to pass store.id */}
-                  </button>
+                  {offersJSON.length !== 0 && (
+                    <Link
+                      className="container-buttons"
+                      to={`/newoffer/${store._id}`}
+                    >
+                      <button>Προσθήκη</button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </Popup>
