@@ -19,7 +19,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>React Auth</div>
+        <div className={classes.logo}>Grocery Deals</div>
       </Link>
       <nav>
         <ul>
@@ -28,11 +28,12 @@ const MainNavigation = () => {
               <Link to="/auth">Login</Link>
             </li>
           )}
-          {isAdmin && (
+          {console.log(isAdmin)}
+          {isAdmin === "admin" ? (
             <li>
               <Link to="/Admin">Admin</Link>
             </li>
-          )}
+          ) : null}
           {isLoggedIn && (
             <li>
               <Link to="/profile">{usersName}'s Profile</Link>
