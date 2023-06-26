@@ -28,12 +28,10 @@ const LocationMarker = ({ onUpdate }) => {
         .then((data) => {
           // setStoresJSON(Object.values(data.data.stores));
           // const stores = Object.values(storesJSON.data.stores);
-          onUpdate(data);
           console.log(data);
         })
         .catch((error) => console.error(error));
     });
-
     L.Control.geocoder().addTo(map);
 
     // console.log("useEffect: " + location);
