@@ -29,14 +29,14 @@ function App() {
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
         <Route path="/admin">
-          {authCtx.isLoggedIn && <AdminPage />}
-          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+          {authCtx.isAdmin && <AdminPage />}
+          {!authCtx.isAdmin && <Redirect to="/auth" />}
         </Route>
-        <Route path="/newoffer">
+        <Route path="/newoffer/:id">
           {authCtx.isLoggedIn && <NewOfferPage />}
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
-        <Route path="/reviewstore">
+        <Route path="/reviewstore/:id">
           {authCtx.isLoggedIn && <ReviewStore />}
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
