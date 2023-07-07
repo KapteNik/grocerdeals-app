@@ -35,7 +35,7 @@ function LocationButton() {
   );
 }
 
-function isDistanceLessThan500m(location1, location2) {
+function isDistanceLessThan50m(location1, location2) {
   const lat1 = location1[0];
   const lon1 = location1[1];
   const lat2 = location2[0];
@@ -62,8 +62,10 @@ function deg2rad(deg) {
 export default function ReactMapPageContent() {
   const [storesJSON, setStoresJSON] = useState([]);
   const [offersJSON, setOffersJSON] = useState([]);
+  const [allStoreOffersJSON, setAllStoreOffersJSON] = useState([]); 
   const history = useHistory();
 
+//  const numOfOffers = 0;
   const position = [38.04826112872981, 23.818216389001485];
 
   const handleAddButtonClick = () => {
@@ -75,7 +77,7 @@ export default function ReactMapPageContent() {
       .then((response) => response.json())
       .then((data) => {
         setOffersJSON(data.data.offers);
-        // console.log(data.data.offers);
+        //console.log(data.data.offers);
       })
       // .then(() => {
       //   isStoreWithin(storesJSON, store);
@@ -110,8 +112,8 @@ export default function ReactMapPageContent() {
     fetch("http://localhost:3000/api/v1/stores/getAllStores")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.data.stores);
         setStoresJSON(Object.values(data.data.stores));
+        console.log(data.data.stores);        
       });
   }, []);
 
@@ -131,7 +133,7 @@ export default function ReactMapPageContent() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <LocationButton />
-        <LocationMarker />
+        <LocationMarker />       
         {storesJSON.map((store) => (
           <Marker
             key={store._id}
@@ -141,11 +143,10 @@ export default function ReactMapPageContent() {
             ]}
             eventHandlers={{
               click: () => {
-                getStoreOffers(store._id);
+                getStoreOffers(store._id);          
               },
             }}
-            // icon={offersJSON.length == 0 ? redIcon : blueIcon}
-            icon={blueIcon}
+            icon={offersJSON.some(offer => (!store.hasOffers)) ? redIcon : blueIcon}  
           >
             <Popup className="pop-up">
               <div className="container-pop-up">
@@ -169,7 +170,7 @@ export default function ReactMapPageContent() {
                   ))}
                 </ul>
                 <div className="container-buttons">
-                  {isDistanceLessThan500m(
+                  {isDistanceLessThan50m(
                     position,
                     store.location.coordinates
                   ) && (
